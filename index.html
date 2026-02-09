@@ -1,374 +1,246 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Nomad Trails Mongolia – Your Local Travel Agent</title>
-  <meta name="description" content="Plan your dream trip to Mongolia with a local travel agent. Tailor‑made tours, small groups, and private guides—Gobi Desert, Khuvsgul Lake, Altai Mountains, and more." />
-  <meta property="og:title" content="Nomad Trails Mongolia – Your Local Travel Agent" />
-  <meta property="og:description" content="Tailor‑made trips to Mongolia: Gobi, steppe, eagle hunters, and more." />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="/images/hero-mongolia.jpg" />
-  <meta name="theme-color" content="#0e1b2a" />
-  <link rel="icon" href="/favicon.ico" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Will You Be My Valentine? 💕</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-  <style>
-    :root{
-      --bg:#0e1b2a;--bg-2:#0f263d;--text:#eaf2fb;--muted:#b5c6db;--accent:#2bd4c7;--accent-2:#ffd166;--card:#102033;--border:rgba(255,255,255,.08);
-      --max:1200px;--radius:16px;--shadow:0 10px 30px rgba(0,0,0,.25)
-    }
-    *{box-sizing:border-box}
-    html,body{margin:0;padding:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,'Helvetica Neue',Arial,'Noto Sans',sans-serif;background:var(--bg);color:var(--text);}
-    a{color:inherit;text-decoration:none}
-    img{max-width:100%;display:block}
-    .container{width:100%;max-width:var(--max);margin:0 auto;padding:0 20px}
+        body {
+            font-family: 'Georgia', serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            position: relative;
+        }
 
-    /* Header */
-    header{position:sticky;top:0;z-index:50;background:linear-gradient(180deg, rgba(14,27,42,.95), rgba(14,27,42,.65) 60%, rgba(14,27,42,0));backdrop-filter: blur(8px);}
-    .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0;border-bottom:1px solid var(--border)}
-    .brand{display:flex;align-items:center;gap:12px;font-weight:700;letter-spacing:.4px}
-    .brand .logo{width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,var(--accent),#38bdf8);box-shadow: var(--shadow)}
-    .menu{display:flex;gap:24px;align-items:center}
-    .menu a{color:var(--muted)}
-    .menu a:hover{color:var(--text)}
-    .cta{display:flex;gap:10px;align-items:center}
-    .btn{padding:10px 16px;border-radius:999px;border:1px solid var(--border);background:transparent;color:var(--text)}
-    .btn:hover{border-color:var(--text)}
-    .btn.primary{background:var(--accent);color:#042326;border:none}
-    .btn.primary:hover{filter:brightness(.95)}
-    .lang{font-size:.95rem;color:var(--muted)}
-    .burger{display:none}
+        .heart {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: rgba(255, 105, 180, 0.6);
+            transform: rotate(45deg);
+            animation: float 6s infinite;
+        }
 
-    /* Hero */
-    .hero{position:relative;min-height:82vh;display:grid;align-items:center}
-    .hero::before{content:"";position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1469474968028-56623f02e42e?q=80&w=2400&auto=format&fit=crop') center/cover no-repeat;filter:brightness(.6)}
-    .hero::after{content:"";position:absolute;inset:0;background:radial-gradient(60% 60% at 10% 10%, rgba(43,212,199,.15), transparent 40%), linear-gradient(180deg, rgba(14,27,42,.4), rgba(14,27,42,.95) 85%)}
-    .hero .content{position:relative;z-index:1;padding:64px 0}
-    .headline{font-size:clamp(2rem,4vw,3.2rem);line-height:1.1;margin:0 0 14px}
-    .sub{color:var(--muted);max-width:780px;font-size:1.05rem}
-    .hero-actions{margin-top:24px;display:flex;gap:12px;flex-wrap:wrap}
+        .heart::before,
+        .heart::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: rgba(255, 105, 180, 0.6);
+            border-radius: 50%;
+        }
 
-    /* Quick Quote */
-    .quote-card{margin-top:28px;background:rgba(16,32,51,.7);border:1px solid var(--border);backdrop-filter: blur(6px);border-radius:var(--radius);padding:16px}
-    .quote-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
-    .input, select{width:100%;padding:12px 14px;border-radius:12px;border:1px solid var(--border);background:#0b1725;color:var(--text)}
-    .input::placeholder{color:#7f93a9}
+        .heart::before {
+            top: -10px;
+            left: 0;
+        }
 
-    /* Sections */
-    section{padding:64px 0;border-top:1px solid var(--border);background:linear-gradient(180deg,transparent, rgba(16,32,51,.35))}
-    .section-title{font-size:1.8rem;margin:0 0 6px}
-    .section-sub{color:var(--muted);margin:0 0 24px}
+        .heart::after {
+            left: 10px;
+            top: 0;
+        }
 
-    /* Cards */
-    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-    .card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column;box-shadow: var(--shadow)}
-    .card-body{padding:16px}
-    .chip{display:inline-flex;align-items:center;gap:6px;font-size:.8rem;background:rgba(43,212,199,.15);color:var(--accent);border:1px solid rgba(43,212,199,.35);padding:6px 10px;border-radius:999px}
-    .price{margin-left:auto;font-weight:700}
+        @keyframes float {
+            0% {
+                transform: translateY(100vh) rotate(45deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100px) rotate(45deg);
+                opacity: 0;
+            }
+        }
 
-    /* Feature band */
-    .features{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-    .feature{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:18px}
+        .container {
+            background: white;
+            padding: 50px;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            max-width: 500px;
+            width: 90%;
+            position: relative;
+            z-index: 10;
+        }
 
-    /* How it works */
-    .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
-    .step{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:18px}
-    .step b{display:inline-block;margin-bottom:6px}
+        h1 {
+            color: #e91e63;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            animation: pulse 2s infinite;
+        }
 
-    /* Testimonials */
-    .testimonials{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-    .quote{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:18px;font-size:.98rem}
-    .quote footer{margin-top:12px;color:var(--muted)}
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+        }
 
-    /* Newsletter */
-    .newsletter{display:flex;gap:10px}
+        .message {
+            font-size: 1.2em;
+            color: #555;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
 
-    /* Footer */
-    footer{border-top:1px solid var(--border);padding:40px 0;color:var(--muted);background:linear-gradient(180deg, rgba(16,32,51,.35), rgba(14,27,42,.9))}
-    .foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:20px}
-    .foot-grid h4{color:var(--text);margin:.2rem 0 .6rem}
-    .foot-grid a{display:block;padding:6px 0}
-    .social{display:flex;gap:10px;margin-top:10px}
+        .buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
 
-    /* Responsive */
-    @media (max-width: 1024px){
-      .cards{grid-template-columns:repeat(2,1fr)}
-      .features{grid-template-columns:repeat(2,1fr)}
-      .steps{grid-template-columns:repeat(2,1fr)}
-      .testimonials{grid-template-columns:repeat(2,1fr)}
-      .quote-grid{grid-template-columns:repeat(2,1fr)}
-      .foot-grid{grid-template-columns:2fr 1fr 1fr}
-    }
-    @media (max-width: 720px){
-      .menu{display:none}
-      .burger{display:inline-flex;background:#0b1725;border:1px solid var(--border);border-radius:10px;padding:8px}
-      .cards,.features,.steps,.testimonials{grid-template-columns:1fr}
-      .quote-grid{grid-template-columns:1fr}
-      .foot-grid{grid-template-columns:1fr 1fr}
-      .newsletter{flex-direction:column}
-    }
-  </style>
+        button {
+            padding: 15px 40px;
+            font-size: 1.1em;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: bold;
+        }
+
+        .yes-btn {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+        }
+
+        .yes-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 10px 30px rgba(245, 87, 108, 0.4);
+        }
+
+        .no-btn {
+            background: #e0e0e0;
+            color: #999;
+            position: relative;
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .cute-note {
+            margin-top: 20px;
+            font-size: 0.95em;
+            color: #f5576c;
+            font-style: italic;
+            animation: fadeIn 1s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .response {
+            margin-top: 30px;
+            font-size: 1.3em;
+            color: #e91e63;
+            font-weight: bold;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.5s ease;
+        }
+
+        .response.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .emoji {
+            font-size: 4em;
+            margin-bottom: 20px;
+            animation: bounce 1s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
 </head>
 <body>
-  <!-- Header / Nav -->
-  <header>
-    <div class="container nav" role="navigation" aria-label="Main">
-      <a class="brand" href="#" aria-label="Nomad Trails Mongolia home">
-        <span class="logo" aria-hidden="true"></span>
-        <span>Nomad Trails Mongolia</span>
-      </a>
-      <nav class="menu" id="menu">
-        <a href="#tours">Tours</a>
-        <a href="#experiences">Experiences</a>
-        <a href="#destinations">Destinations</a>
-        <a href="#about">About</a>
-        <a href="#faqs">FAQs</a>
-        <a href="#blog">Blog</a>
-        <a href="#contact">Contact</a>
-      </nav>
-      <div class="cta">
-        <span class="lang" aria-label="language and currency">EN | USD</span>
-        <a class="btn" href="tel:+97600000000" aria-label="Call us">Call</a>
-        <a class="btn primary" href="#quote">Plan a Trip</a>
-        <button class="burger" aria-label="Open menu" onclick="document.getElementById('drawer').showModal()">☰</button>
-      </div>
-    </div>
-  </header>
-
-  <!-- Mobile Drawer -->
-  <dialog id="drawer" style="border:none;border-radius:16px;background:#0b1725;color:var(--text);max-width:92%;padding:0 0 6px">
-    <div style="padding:12px 16px;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center">
-      <strong>Menu</strong>
-      <button class="btn" onclick="document.getElementById('drawer').close()">Close</button>
-    </div>
-    <nav style="display:grid;padding:8px 16px">
-      <a href="#tours" onclick="drawer.close()">Tours</a>
-      <a href="#experiences" onclick="drawer.close()">Experiences</a>
-      <a href="#destinations" onclick="drawer.close()">Destinations</a>
-      <a href="#about" onclick="drawer.close()">About</a>
-      <a href="#faqs" onclick="drawer.close()">FAQs</a>
-      <a href="#blog" onclick="drawer.close()">Blog</a>
-      <a href="#contact" onclick="drawer.close()">Contact</a>
-    </nav>
-  </dialog>
-
-  <!-- Hero -->
-  <section class="hero" aria-label="Intro">
-    <div class="container content">
-      <h1 class="headline">See Mongolia like a local.</h1>
-      <p class="sub">Private and small‑group trips designed by expert guides. From the towering dunes of the Gobi to the crystal waters of Khuvsgul Lake and the eagle hunters of the Altai—build a route that fits your vibe and budget.</p>
-      <div class="hero-actions">
-        <a class="btn primary" href="#tours">Browse Tours</a>
-        <a class="btn" href="#destinations">Top Destinations</a>
-      </div>
-
-      <div id="quote" class="quote-card" aria-label="Quick trip planner">
-        <form class="quote-grid" onsubmit="event.preventDefault(); alert('We\'ll follow up with a custom quote!');">
-          <select aria-label="Trip style">
-            <option>Trip style</option>
-            <option>Private</option>
-            <option>Small group</option>
-            <option>Custom expedition</option>
-          </select>
-          <input class="input" type="date" aria-label="Start date" />
-          <input class="input" type="number" min="1" placeholder="# of travelers" aria-label="Number of travelers" />
-          <input class="input" type="text" placeholder="What do you want to see? (Gobi, Altai, Naadam…)" aria-label="Highlights" />
-          <button class="btn primary" type="submit" style="grid-column: span 4">Get a free plan →</button>
-        </form>
-      </div>
-    </div>
-  </section>
-
-  <!-- Featured Tours -->
-  <section id="tours" aria-labelledby="tours-title">
     <div class="container">
-      <h2 id="tours-title" class="section-title">Popular Tours</h2>
-      <p class="section-sub">Hand‑picked routes that balance driving time with epic scenery, culture, and comfort.</p>
-      <div class="cards">
-        <article class="card">
-          <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=1600&auto=format&fit=crop" alt="Gobi Desert dunes at sunset" />
-          <div class="card-body">
-            <div style="display:flex;gap:10px;align-items:center">
-              <span class="chip">7 days</span>
-              <span class="chip">Easy‑moderate</span>
-              <span class="price">from $1,290</span>
-            </div>
-            <h3>Gobi Essentials</h3>
-            <p>Flaming Cliffs, Khongor Sand Dunes, camel trek, and starry skies over the steppe.</p>
-            <a class="btn" href="#">View details</a>
-          </div>
-        </article>
-        <article class="card">
-          <img src="https://images.unsplash.com/photo-1529070538774-1843cb3265df?q=80&w=1600&auto=format&fit=crop" alt="Blue lake with pine forests in Khuvsgul" />
-          <div class="card-body">
-            <div style="display:flex;gap:10px;align-items:center">
-              <span class="chip">10 days</span>
-              <span class="chip">Family‑friendly</span>
-              <span class="price">from $1,880</span>
-            </div>
-            <h3>Khuvsgul Lake Escape</h3>
-            <p>Crystal waters, reindeer herder visit, forest hikes, and cozy ger camps by the shore.</p>
-            <a class="btn" href="#">View details</a>
-          </div>
-        </article>
-        <article class="card">
-          <img src="https://images.unsplash.com/photo-1544989164-31dc3c645987?q=80&w=1600&auto=format&fit=crop" alt="Altai mountains with eagle hunter" />
-          <div class="card-body">
-            <div style="display:flex;gap:10px;align-items:center">
-              <span class="chip">12 days</span>
-              <span class="chip">Adventure</span>
-              <span class="price">from $2,640</span>
-            </div>
-            <h3>Altai Eagle Hunter Expedition</h3>
-            <p>Meet Kazakh eagle hunters, trek alpine valleys, and camp under Milky Way skies.</p>
-            <a class="btn" href="#">View details</a>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- Experiences / Features -->
-  <section id="experiences">
-    <div class="container">
-      <h2 class="section-title">Why travel with us?</h2>
-      <p class="section-sub">Local expertise, flexible itineraries, and transparent pricing. We’re your on‑the‑ground team in Mongolia.</p>
-      <div class="features">
-        <div class="feature"><h3>Local pros</h3><p>English‑speaking guides and drivers who know the backroads, not just the highways.</p></div>
-        <div class="feature"><h3>Flexible & fair</h3><p>Switch plans on the fly. No hidden fees. Pay securely in USD, EUR, or MNT.</p></div>
-        <div class="feature"><h3>24/7 support</h3><p>We’re available throughout your trip via WhatsApp, phone, and email.</p></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Destinations -->
-  <section id="destinations">
-    <div class="container">
-      <h2 class="section-title">Top Destinations</h2>
-      <p class="section-sub">Pick a region to start planning.</p>
-      <div class="cards">
-        <article class="card">
-          <img src="https://images.unsplash.com/photo-1549880181-56a44cf4a9a4?q=80&w=1600&auto=format&fit=crop" alt="Khongor sand dunes in the Gobi" />
-          <div class="card-body"><h3>Gobi Desert</h3><p>Khongor dunes, Flaming Cliffs, Yol Valley canyon, and camel herders.</p></div>
-        </article>
-        <article class="card">
-          <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1600&auto=format&fit=crop" alt="Khuvsgul lake shoreline" />
-          <div class="card-body"><h3>Khuvsgul Lake</h3><p>Blue pearl of Mongolia—kayaking, hiking, and Tsaatan reindeer culture.</p></div>
-        </article>
-        <article class="card">
-          <img src="https://images.unsplash.com/photo-1547044576-0d0aa1f3039c?q=80&w=1600&auto=format&fit=crop" alt="Altai mountain peaks" />
-          <div class="card-body"><h3>Altai Mountains</h3><p>Glacial valleys, eagle hunters, and rugged steppe adventures.</p></div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- How it works -->
-  <section id="about">
-    <div class="container">
-      <h2 class="section-title">How it works</h2>
-      <div class="steps">
-        <div class="step"><b>1. Tell us your vibe</b><p>Dates, budget, and must‑see list.</p></div>
-        <div class="step"><b>2. Get a plan</b><p>We design options with transparent pricing.</p></div>
-        <div class="step"><b>3. Book & prep</b><p>Secure payment, visa tips, packing list.</p></div>
-        <div class="step"><b>4. Go explore</b><p>We handle the logistics; you collect the memories.</p></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Testimonials -->
-  <section aria-label="Testimonials">
-    <div class="container">
-      <h2 class="section-title">Traveler stories</h2>
-      <div class="testimonials">
-        <blockquote class="quote">“Best trip of my life. Our guide found hidden valleys I’d never see on my own.”<footer>— Maya S., USA</footer></blockquote>
-        <blockquote class="quote">“Super responsive and flexible. We switched two nights last‑minute—no stress.”<footer>— Lucas R., Germany</footer></blockquote>
-        <blockquote class="quote">“The ger camps were cozy and the drivers absolute legends.”<footer>— Aiko N., Japan</footer></blockquote>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact / Newsletter -->
-  <section id="contact">
-    <div class="container">
-      <h2 class="section-title">Let’s plan your Mongolia trip</h2>
-      <p class="section-sub">Share a few details and our travel designer will reach out within 24 hours.</p>
-      <form class="newsletter" onsubmit="event.preventDefault(); alert('Thanks! We\'ll be in touch shortly.');">
-        <input class="input" type="text" placeholder="Your name" aria-label="Your name" required />
-        <input class="input" type="email" placeholder="Email" aria-label="Email" required />
-        <input class="input" type="tel" placeholder="Phone (optional)" aria-label="Phone" />
-        <button class="btn primary" type="submit">Request a callback</button>
-      </form>
-    </div>
-  </section>
-
-  <footer>
-    <div class="container foot-grid">
-      <div>
-        <div class="brand"><span class="logo" aria-hidden="true"></span><span>Nomad Trails Mongolia</span></div>
-        <p style="margin-top:8px">Licensed Mongolian tour operator. Based in Ulaanbaatar.</p>
-        <div class="social">
-          <a href="#" aria-label="Instagram">IG</a>
-          <a href="#" aria-label="Facebook">FB</a>
-          <a href="#" aria-label="YouTube">YT</a>
+        <div class="emoji">💝</div>
+        <h1>Sissi, Will You Be My Valentine? 💕</h1>
+        <p class="message">
+            Hey Sissi, I've been thinking about this for a while... 
+            You make every day brighter with your smile, and I couldn't imagine celebrating Valentine's Day without asking you to be mine. 
+            Would you make me the happiest person and be my Valentine? 🌹✨
+        </p>
+        <div class="buttons">
+            <button class="yes-btn" onclick="handleYes()">Yes! 🥰💖✨</button>
+            <button class="no-btn" id="noBtn" disabled>No 😢💔</button>
         </div>
-      </div>
-      <div>
-        <h4>Tours</h4>
-        <a href="#">Gobi</a>
-        <a href="#">Khuvsgul</a>
-        <a href="#">Altai</a>
-        <a href="#">Naadam</a>
-      </div>
-      <div>
-        <h4>Company</h4>
-        <a href="#">About us</a>
-        <a href="#">Sustainability</a>
-        <a href="#">Careers</a>
-        <a href="#">Press</a>
-      </div>
-      <div>
-        <h4>Support</h4>
-        <a href="#faqs">FAQs</a>
-        <a href="#">Booking terms</a>
-        <a href="#">Privacy</a>
-        <a href="mailto:hello@nomadtrails.mn">hello@nomadtrails.mn</a>
-      </div>
+        <p class="cute-note">*The "No" button doesn't work because that's not an option! 😊💕*</p>
+        <div class="response" id="response"></div>
     </div>
-    <div class="container" style="margin-top:20px;font-size:.9rem">© <span id="year"></span> Nomad Trails Mongolia. All rights reserved.</div>
-  </footer>
 
-  <script>
-    // Simple enhancements
-    document.getElementById('year').textContent = new Date().getFullYear();
+    <script>
+        // Create floating hearts
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.className = 'heart';
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.animationDelay = Math.random() * 2 + 's';
+            heart.style.animationDuration = (Math.random() * 3 + 4) + 's';
+            document.body.appendChild(heart);
+            
+            setTimeout(() => {
+                heart.remove();
+            }, 7000);
+        }
 
-    // Example: smooth scroll for same-page links
-    document.querySelectorAll('a[href^="#"]').forEach(a=>{
-      a.addEventListener('click', e=>{
-        const id = a.getAttribute('href');
-        if(id.length>1){ e.preventDefault(); document.querySelector(id)?.scrollIntoView({behavior:'smooth'}); }
-      });
-    });
+        // Create hearts continuously
+        setInterval(createHeart, 300);
 
-    // Basic analytics placeholder
-    window.app = { track:(ev,meta)=>console.log('track',ev,meta) };
-  </script>
+        let noClickCount = 0;
+        const noButton = document.getElementById('noBtn');
 
-  <!-- Structured data for SEO -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "TravelAgency",
-    "name": "Nomad Trails Mongolia",
-    "image": "https://example.com/images/hero-mongolia.jpg",
-    "telephone": "+976-0000-0000",
-    "email": "hello@nomadtrails.mn",
-    "address": {"@type": "PostalAddress", "addressCountry": "MN", "addressLocality": "Ulaanbaatar"},
-    "areaServed": "Mongolia",
-    "url": "https://example.com",
-    "sameAs": ["https://instagram.com/yourbrand","https://facebook.com/yourbrand"],
-    "priceRange": "$$"
-  }
-  </script>
+        function handleYes() {
+            const response = document.getElementById('response');
+            response.textContent = "🎉✨ Yay! You just made my day, Sissi! I can't wait to celebrate with you! 🥰💕🌹";
+            response.classList.add('show');
+            document.querySelector('.buttons').classList.add('hidden');
+            document.querySelector('.cute-note').classList.add('hidden');
+            document.querySelector('.emoji').textContent = '😍';
+            
+            // Create confetti effect
+            for (let i = 0; i < 50; i++) {
+                setTimeout(() => createHeart(), i * 50);
+            }
+        }
+    </script>
 </body>
 </html>
